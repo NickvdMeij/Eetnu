@@ -1,0 +1,25 @@
+<ion-view view-title="Profile">
+  <ion-content ng-init="refreshUser()">
+  	<div class="list card">
+  		<div class="item item-avatar">
+		    <img src="{{currentUser.avatar.standard}}">
+		    <h2>{{currentUser.name}}</h2>
+		    <p>Score: {{currentUser.score}}</p>
+		</div>
+		<div class="item item-body">
+			<h2>Personal Info</h2>
+			<p>Location: {{currentUser.location}}</p>
+			<p>Gender: {{currentUser.gender}}</p>
+			<p>Birth date: {{currentUser.birth_date}}</p>
+			<p>Website: <a href="#/app/profile" ng-click="openUrl()">{{currentUser.website_url}}</a></p>
+			<p>Email: <a href="#/app/profile" ng-click="mailTo()">{{currentUser.email}}</a></p>
+		</div>
+		<div class="item item-body">
+		    <h2>Bio</h2>
+		    <p>
+		      {{currentUser.bio}}
+		    </p>
+		</div>
+    </div>
+  </ion-content>
+</ion-view>

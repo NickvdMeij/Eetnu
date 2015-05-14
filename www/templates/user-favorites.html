@@ -1,0 +1,11 @@
+<ion-view view-title="Favorites">
+  <ion-content ng-init="loadFavorites()">
+  	<div class="list">
+	    <a class="item item-avatar" ng-repeat="favorite in favorites.results" href="#/venue/{{favorite.id}}">
+	      <img src="{{favorite.images.cropped[0]}}">
+	      <h2>{{favorite.name}}</h2>
+	      <p>Score: {{favorite.rating}}</p>
+	    </a>
+	</div>
+  </ion-content>
+</ion-view>

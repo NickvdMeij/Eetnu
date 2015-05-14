@@ -1,0 +1,12 @@
+<ion-view view-title="Users">
+  <ion-content ng-init="loadUsers()">
+  	<div class="list">
+
+	    <a class="item item-avatar" ng-repeat="user in users.results" href="#/users/{{user.id}}">
+	      <img src="{{user.avatar.tiny}}">
+	      <h2>{{user.name}}</h2>
+	      <p>Score: {{user.score}}</p>
+	    </a>
+	</div>
+  </ion-content>
+</ion-view>

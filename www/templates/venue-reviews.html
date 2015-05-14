@@ -1,0 +1,29 @@
+<ion-view view-title="Venue Reviews">
+  <ion-content ng-init="loadReviews()">
+    <div class="card" ng-show="loading">
+  		<h2>Loading...</h2>
+  	</div>
+  	<div class="card" ng-show="error">
+  		<h2>Error</h2>
+  	</div>
+  	<div class="list card" ng-repeat="review in reviews.results">
+	    <div class="item item-avatar">
+		    <img src="{{review.author.avatar.standard}}">
+		    <h2>{{review.author.name}}</h2>
+		</div>
+
+		<div class="item item-body">
+			<h2>Review</h2>
+			<p>{{review.body}}</p>
+		</div>
+
+		<div class="item item-body" ng-show="review.scores">
+			<h2>Scores</h2>
+			<p>Food: {{review.scores.food}}</p>
+			<p>Ambiance: {{review.scores.ambiance}}</p>
+			<p>Service: {{review.scores.service}}</p>
+			<p>Price vs Value: {{review.scores.value}}</p>
+		</div>
+	</div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,39 @@
+<ion-view view-title="Venue">
+  <ion-content ng-init="loadVenue()">
+  	<div class="card" ng-show="singleVenue">
+  		<div class="item item-avatar">
+		    <img src="{{singleVenue.images.cropped[0]}}">
+		    <h2>{{singleVenue.name}}</h2>
+		    <p>Score: {{singleVenue.rating}}</p>
+		</div>
+		<div class="item item-body">
+			<h2>Contact</h2>
+			<p ng-show="singleVenue.telephone">Telephone: <a href="#" ng-click="openTel(singleVenue.telephone)">{{singleVenue.telephone}}</a></p>
+			<p ng-show="singleVenue.mobile">Mobile: <a href="#" ng-click="openTel(singleVenue.mobile)">{{singleVenue.mobile}}</a></p>
+			<p ng-show="singleVenue.website_url">Website: <a href="#" ng-click="openUrl(singleVenue.website_url)">{{singleVenue.website_url}}</a></p>
+			<p ng-show="singleVenue.facebook_url">Facebook: <a href="#" ng-click="openUrl(singleVenue.facebook_url)">Facebook</a></p>
+			<p ng-show="singleVenue.twitter">Twitter: <a href="#" ng-click="openUrl(singleVenue.twitter)">singleVenue.twitter</a></p>
+		</div>
+		<div class="item item-body" ng-show="singleVenue.address">
+			<h2>Address</h2>
+			<p ng-show="singleVenue.address.street">Street: {{singleVenue.address.street}}</p>
+			<p ng-show="singleVenue.address.zipcode">Zipcode: {{singleVenue.address.zipcode}}</p>
+			<p ng-show="singleVenue.address.city">City: {{singleVenue.address.city}}</p>
+			<p ng-show="singleVenue.address.region">Region: {{singleVenue.address.region}}</p>
+			<p ng-show="singleVenue.address.country">Country: {{singleVenue.address.country}}</p>
+			<button ng-show="singleVenue.geolocation" ng-click="openMap(singleVenue)" class="button button-block button-positive">Open Map</button>
+		</div>
+		<div class="item item-body">
+			<h2>Info</h2>
+			<p ng-show="singleVenue.category">Category: {{singleVenue.category}}</p>
+			<p ng-show="singleVenue.plan">Plan: {{singleVenue.plan}}</p>
+			<p ng-show="singleVenue.currency_symbol">Currency: {{singleVenue.currency_symbol}}</p>
+		</div>
+		<div class="item tabs tabs-secondary tabs-icon-left">
+		    <a class="tab-item" href="#/venues/{{singleVenue.id}}/reviews">
+		      <i class="icon ion-ios-paper"></i>
+		      View Reviews
+		    </a>
+		</div>
+  </ion-content>
+</ion-view>

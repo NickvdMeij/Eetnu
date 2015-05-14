@@ -1,0 +1,31 @@
+<ion-view view-title="Venues">
+  <ion-content ng-init="loadVenues()">
+  	<div class="card">
+	  	<div class="item item-body">
+	  		<h1>Search</h1>
+	  		<input type="text" placeholder="Search" ng-model="search">
+	  		<button class="button button-block button-stable" ng-click="toggleGeolocation()">
+	  			<span ng-show="useGeolocation">Disable geolocation</span>
+	  			<span ng-hide="useGeolocation">Enable geolocation</span>
+	  		</button>
+	  		<button class="button button-block button-positive" ng-click="searchVenues(search)">
+	  			<span ng-hide="loading">Search</span>
+	  			<span ng-show="loading">Loading...</span>
+	  		</button>
+	  	</div>
+  	</div>
+  	<div class="card" ng-show="error">
+	  	<div class="item item-body">
+	  		<h2>{{error}}</h2>
+	  	</div>
+  	</div>
+  	<div class="list">
+
+	    <a class="item item-avatar" ng-repeat="venue in venues.results" href="#/venues/{{venue.id}}">
+	      <img src="{{venue.images.cropped[0]}}">
+	      <h2>{{venue.name}}</h2>
+	      <p>Score: {{venue.rating}}</p>
+	    </a>
+	</div>
+  </ion-content>
+</ion-view>

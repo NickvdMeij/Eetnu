@@ -1,0 +1,34 @@
+<ion-view view-title="User">
+  <ion-content ng-init="loadUser()">
+  	<div class="card">
+  		<div class="item item-avatar">
+		    <img src="{{singleUser.avatar.standard}}">
+		    <h2>{{singleUser.name}}</h2>
+		    <p>Score: {{singleUser.score}}</p>
+		</div>
+		<div class="item item-body">
+			<h2>Personal Info</h2>
+			<p ng-show="singleUser.location">Location: {{singleUser.location}}</p>
+			<p ng-show="singleUser.gender">Gender: {{singleUser.gender}}</p>
+			<p ng-show="singleUser.birth_date">Birth date: {{singleUser.birth_date}}</p>
+			<p ng-show="singleUser.website_url">Website: <a href="#" ng-click="openUrl()">{{singleUser.website_url}}</a></p>
+		</div>
+		<div class="item item-body" ng-show="singleUser.bio">
+		    <h2>Bio</h2>
+		    <p>
+		      {{singleUser.bio}}
+		    </p>
+		</div>
+		<div class="item tabs tabs-secondary tabs-icon-left">
+		    <a class="tab-item" href="#/users/{{singleUser.id}}/favorites">
+		      <i class="icon ion-star"></i>
+		      Favorites
+		    </a>
+		    <a class="tab-item" href="#/users/{{singleUser.id}}/reviews">
+		      <i class="icon ion-edit"></i>
+		      Reviews
+		    </a>
+		</div>
+	</div>
+  </ion-content>
+</ion-view>
